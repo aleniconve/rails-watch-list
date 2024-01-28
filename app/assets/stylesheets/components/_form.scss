@@ -1,0 +1,29 @@
+.movie-form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  width: fit-content;
+  height: 400px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3396ALl_Vh8E7Cmb-of16T8t-aALWkXno_rrSGgd22Ds3kEmntNlbDSOusMsCy0teEt4&usqp=CAU);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+#movie-form {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 20px;
+  background-color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 150px;
+  background-image: url(https://altabel.files.wordpress.com/2016/11/1.jpg);
+  background-size: cover;
+  background-position: center;
+}

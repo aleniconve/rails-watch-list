@@ -1,8 +1,9 @@
-<h3>Create a new list</h3>
-
+<div id="movie-form">
+<div class="movie-form">
 <%= simple_form_for (@list) do |f| %>
 <%= f.input :name %>
 <%= f.submit "Submit list", class: "btn btn-primary" %>
+<button class="btn btn-warning"><%= link_to "Back", lists_path %></button>
 <% end %>
-
-<%= link_to "Back", lists_path %>
+</div>
+</div>

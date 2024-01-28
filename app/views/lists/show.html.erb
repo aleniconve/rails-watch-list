@@ -1,18 +1,24 @@
-<h3>List Details</h3>
-<p><%= @list.name %></p>
 
+<div class="card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1514306191717-452ec28c7814?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+<h1><%= @list.name %></h1>
+</div>
 
+<div class="button-add-movie">
+<button class="btn btn-blue"><%= link_to "➕Add a Movie", new_list_bookmark_path(@list) %></button>
+</div>
+
+<div class="movie-cards">
 <% @list.bookmarks.each do |bookmark| %>
-<li><%= bookmark.comment%><%= link_to "Delete", list_bookmark_path(bookmark),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %><li>
+  <div class="card">
+    <%= image_tag bookmark.movie.poster_url, alt: "Poster", class: "card-img-top" %>
+    <h5 class="card-title"><%= bookmark.movie.title%></h5>
+    <h5>⭐️ <%=bookmark.movie.rating%></h5>
+    <p class="card-text"><%= bookmark.movie.overview%></p>
+    <p class="card-comment">💬  "<%= bookmark.comment%>"</p>
+    <%= link_to "🗑", list_bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  </div>
 <% end %>
-
-
-
-<div>
-<%= link_to "➕Add Bookmark", new_list_bookmark_path(@list) %>
 </div>
 
 
-<%= link_to "Back", lists_path %>
+<div class="back-button"><button class="btn btn-red"><%= link_to "Back", lists_path %></button></div>
